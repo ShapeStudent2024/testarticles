@@ -1,9 +1,9 @@
 const config = {
-    host: "localhost",
+    host: "127.0.0.1",
     port: 5432,
     user: "postgres",
-    password: "postgres", 
-    database: "postgres", 
+    password: "postgresql", 
+    database: "postgresql", 
     connection_limit:100
 }
 
