@@ -1,3 +1,24 @@
+CREATE TABLE public.trips (
+    id serial4 NOT NULL,
+    destination varchar(100) NOT NULL,
+    description text NOT NULL,
+    startDate date NOT NULL,
+    endDate date NOT NULL,
+    datecreated timestamp NOT NULL DEFAULT now(),
+    datemodified timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    imageurl varchar(2048) NULL,
+    isPublic bool NULL,
+    travelerID int4 NOT NULL,
+    CONSTRAINT trips_pkey PRIMARY KEY (id)
+);
+
+INSERT INTO trips (destination, description, startDate, endDate, travelerID) VALUES
+    ('Paris', 'A romantic trip to explore the Eiffel Tower and Louvre', '2025-06-01', '2025-06-07', 1),
+    ('Tokyo', 'Discovering Japanese culture and cuisine', '2025-07-15', '2025-07-22', 1),
+    ('New York', 'City adventure with Broadway shows', '2025-08-10', '2025-08-15', 1),
+    ('Bali', 'Relaxing beach getaway with temple visits', '2025-09-01', '2025-09-10', 3);
+
+
 ---
 backend/controllers/auth.ts
 import passport from "koa-passport";
